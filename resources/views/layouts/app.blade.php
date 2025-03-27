@@ -1,4 +1,3 @@
-@props(['title'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -6,12 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ $metaTitle ?: 'Skilltogrow - Блог о персональном развитии, карьерном росте, самопознании и совершенствовании' }}</title>
-        <meta name="description" content="{{ $metaDescription ?: 'Skilltogrow - Блог о персональном развитии, карьерном росте, самопознании и совершенствовании' }} ">
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=arsenal:400,400i,700,700i" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -22,17 +20,26 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        @include('layouts.partials.header')
+        <div class="min-h-screen bg-gray-100">
+            @livewire('navigation-menu')
 
-        @yield('hero')
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
 
-        <main class="container mx-auto px-5 flex flex-grow">
-            {{ $slot }}
-        </main>
-
-        @include('layouts.partials.footer')
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
 
         @stack('modals')
+
         @livewireScripts
     </body>
 </html>

@@ -10,12 +10,6 @@ class AppLayout extends Component
     /**
      * Get the view / contents that represents the component.
      */
-    public function __construct(public ?string $metaTitle = null, public ?string $metaDescription = null)
-    {
-
-    }
-
-
     public function render(): View
     {
         return view('layouts.app');
