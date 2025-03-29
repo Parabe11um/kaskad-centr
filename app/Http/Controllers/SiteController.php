@@ -21,4 +21,20 @@ class SiteController extends Controller
 
         return view('about', compact('widget'));
     }
+
+    public function contacts(): View
+    {
+        $widget = TextWidget::query()
+            ->where('key', '=', 'contacts')
+            ->where('active', '=', true)
+            ->first();
+        if (!$widget){
+            throw new NotFoundHttpException();
+        }
+
+        return view('contacts', compact('widget'));
+    }
 }
+
+
+

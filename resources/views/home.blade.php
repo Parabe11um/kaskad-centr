@@ -1,11 +1,12 @@
-<x-app-layout meta-description="SkillToGrow">
+<x-app-layout meta-description="Центр Каскад">
 
     @section('hero')
-        <div class="w-full text-center py-32 bg-gray-100">
+        <div class="hero w-full text-center py-32">
             <h1 class="text-2xl md:text-3xl p-20 font-bold text-center lg:text-5xl text-gray-700">
-                Блог о персональном развитии, карьерном росте, самопознании и совершенствовании
+                Сайт автономной некоммерческой организации
+                Центр поддержки социальных и патриотических проектов ветеранов военной службы "Каскад"
             </h1>
-            <a class="px-3 py-2 text-lg text-white bg-gray-800 rounded mt-5 inline-block"
+            <a class="call-btn px-3 py-2 text-lg rounded mt-5 inline-block"
                href="{{ route('posts.index') }}">Подробнее</a>
         </div>
     @endsection
