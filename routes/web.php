@@ -15,8 +15,8 @@ Route::get('/sitemap.xml', function () {
     $sitemap = Sitemap::create();
 
     // Добавляем статические страницы
-//    $sitemap->add(Url::create('/'))
-//        ->add(Url::create('/about-us'));
+    $sitemap->add(Url::create('/'))
+        ->add(Url::create('/about-us'));
 
     // Добавляем URL всех категорий
     Category::all()->each(function (Category $category) use ($sitemap) {

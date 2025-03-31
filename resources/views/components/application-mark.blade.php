@@ -1,3 +1,5 @@
 <div class="text-gray-800 font-semibold">
-    <span class="text-yellow-500 text-2xl">Каскад</span>
+    <span class="text-blue-500 text-2xl">
+        <img src="{{ asset('images/logo.jpg') }}" alt="Логотип Каскад" style="height: 4rem;">
+    </span>
 </div>

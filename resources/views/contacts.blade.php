@@ -15,12 +15,27 @@
                     <h1 class="text-3xl font-bold hover:text-gray-700 pb-4">
                         {{$widget ? $widget->title : ''}}
                     </h1>
-                    <div>
-                        {!! $widget ? $widget->content : '' !!}
-                    </div>
-                </div>
-            </article>
-        </section>
+                    <div class="flex max-md:flex-col flex-row">
+                        <div class="container mx-auto flex-col flex-wrap py-6">
+                            @livewire('contact-form')
+                        </div>
 
+                        <div class="p-6">
+                            {!! $widget ? $widget->content : '' !!}
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+            </article>
+
+        </section>
     </div>
 </x-app-layout>
