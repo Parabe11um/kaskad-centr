@@ -85,6 +85,9 @@
             <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')" class="block my-4 border-transparent text-base font-medium text-gray-600 hover:border-gray-300 hover:text-gray-800">
                 {{ __('О центре') }}
             </x-nav-link>
+            <x-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('contacts')">
+                {{ __('Контакты') }}
+            </x-nav-link>
         </div>
         <div class="pt-4 pb-3 border-t border-gray-200">
             @auth
