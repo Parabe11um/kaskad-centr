@@ -6,7 +6,7 @@
                     <div class="swiper-slide w-[200px] flex justify-center items-center">
                         <img src="{{ Storage::url($partner->logo_path) }}"
                              alt="{{ $partner->name }}"
-                             class="h-20 object-contain" />
+                             class="h-100 object-contain" />
                     </div>
                 @endforeach
             </div>
