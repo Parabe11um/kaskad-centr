@@ -25,17 +25,8 @@
                         </div>
 
                     </div>
-
-
-
-
-
                 </div>
-
-
-
             </article>
-
         </section>
     </div>
 </x-app-layout>

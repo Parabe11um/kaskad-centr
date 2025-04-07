@@ -1,5 +1,24 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav
+    x-data="{
+        open: false,
+        scrollY: window.scrollY,
+        hidden: false,
+        init() {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > this.scrollY) {
+                    this.hidden = true;
+                } else {
+                    this.hidden = false;
+                }
+                this.scrollY = window.scrollY;
+            });
+        }
+    }"
+    x-bind:class="hidden ? '-translate-y-full' : 'translate-y-0'"
+    class="bg-white border-b border-gray-200 fixed top-0 left-0 right-0 z-50 shadow transition-transform duration-300"
+>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <!-- Левая часть: логотип -->
             <div class="flex">

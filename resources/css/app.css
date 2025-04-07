@@ -3,8 +3,23 @@
 @tailwind utilities;
 
 body{
-    font-family: Roboto,sans-serif!important;
+    font-family: 'Montserrat', sans-serif!important;
 }
+
+h2{
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+h3{
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+p{
+    margin: 1.5rem 0;
+}
+
 
 [x-cloak] {
     display: none;
@@ -21,6 +36,6 @@ body{
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
 }
