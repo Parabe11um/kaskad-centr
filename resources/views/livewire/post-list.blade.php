@@ -16,7 +16,7 @@
                 </span>
             @endif
         </div>
-        <div class="flex items-center space-x-4 font-light ">
+        <div class="lg:flex hidden items-center space-x-4 font-light ">
             <x-checkbox wire:model.live="popular" />
             <x-label> Самые популярные </x-label>
             <button class="{{ $sort === 'desc' ? 'text-gray-900 border-b border-gray-700' : 'text-gray-500' }} py-4"
