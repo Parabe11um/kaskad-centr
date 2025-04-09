@@ -2,8 +2,8 @@
 
 <div {{ $attributes }}>
     <a wire:navigate href="{{ route('posts.show', $post->slug) }}">
-        <div>
-            <img class="w-full rounded-xl" src="{{ $post->getThumbnailUrl() }}">
+        <div class="aspect-[4/4] overflow-hidden rounded-xl">
+            <img class="w-full h-full object-cover rounded-xl" src="{{ $post->getThumbnailUrl() }}">
         </div>
     </a>
     <div class="mt-3">
