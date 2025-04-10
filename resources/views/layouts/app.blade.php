@@ -15,6 +15,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/storage/app/public/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/storage/app/public/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/storage/app/public/favicon-16x16.png">
+        <link rel="manifest" href="/storage/app/public/site.webmanifest">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
