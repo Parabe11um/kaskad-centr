@@ -39,3 +39,9 @@ p{
     font-weight: 400;
     cursor: pointer;
 }
+
+ol, ul, li {
+    list-style: circle;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
