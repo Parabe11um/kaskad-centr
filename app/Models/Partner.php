@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partner extends Model
 {
-    protected $fillable = ['name', 'logo_path'];
+    protected $fillable = ['name', 'slug', 'logo_path', 'body'];
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }

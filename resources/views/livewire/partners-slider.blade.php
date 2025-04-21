@@ -4,9 +4,11 @@
             <div class="swiper-wrapper">
                 @foreach($partners as $partner)
                     <div class="swiper-slide w-[200px] flex justify-center items-center">
-                        <img src="{{ Storage::url($partner->logo_path) }}"
-                             alt="{{ $partner->name }}"
-                             class="h-100 object-contain" />
+                        <a href="{{ route('partners.show', $partner->slug) }}">
+                            <img src="{{ Storage::url($partner->logo_path) }}"
+                                 alt="{{ $partner->name }}"
+                                 class="h-20 object-contain mx-auto hover:scale-105 transition">
+                        </a>
                     </div>
                 @endforeach
             </div>
