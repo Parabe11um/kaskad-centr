@@ -49,3 +49,7 @@ ol, ul, li {
 .logo-mark{
     height: 7rem!important;
 }
+
+.main-container{
+    padding-top: 7rem;
+}
