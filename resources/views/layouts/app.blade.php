@@ -39,8 +39,7 @@
         </main>
 
         @include('layouts.partials.footer')
-
         @stack('modals')
-        @livewireScripts
+        @stack('scripts')
     </body>
 </html>

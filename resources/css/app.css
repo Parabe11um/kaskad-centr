@@ -53,3 +53,7 @@ ol, ul, li {
 .main-container{
     padding-top: 7rem;
 }
+
+[x-cloak] {
+    display: none !important;
+}
