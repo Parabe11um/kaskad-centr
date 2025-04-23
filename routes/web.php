@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\PartnerController;
 use App\Models\Category;
+use App\Models\Partner;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\Sitemap;
@@ -16,22 +17,26 @@ Route::get('/sitemap.xml', function () {
     $sitemap = Sitemap::create();
 
     // Добавляем статические страницы
-    $sitemap->add(Url::create('/'))
-        ->add(Url::create('/about'));
+    $sitemap
+        ->add(Url::create('/'))
+        ->add(Url::create('/about'))
+        ->add(Url::create('/contacts'))
+        ->add(Url::create('/news'));
 
-    // Добавляем URL всех категорий
-    Category::all()->each(function (Category $category) use ($sitemap) {
-        $sitemap->add(
-            Url::create("/category/{$category->slug}")
-                ->setLastModificationDate($category->updated_at) // Указываем дату обновления категории
-        );
-    });
 
-    // Добавляем URL всех постов
+    // Добавляем URL всех статей
     Post::all()->each(function (Post $post) use ($sitemap) {
         $sitemap->add(
             Url::create("/{$post->slug}")
                 ->setLastModificationDate($post->updated_at) // Указываем дату обновления поста
+        );
+    });
+
+    // Добавляем URL всех партнеров
+    Partner::all()->each(function (Partner $partner) use ($sitemap) {
+        $sitemap->add(
+            Url::create("/{$partner->slug}")
+                ->setLastModificationDate($partner->updated_at) // Указываем дату обновления партнера
         );
     });
 
