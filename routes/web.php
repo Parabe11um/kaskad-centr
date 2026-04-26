@@ -51,6 +51,15 @@ Route::get('/news', [PostController::class, 'index'])->name('posts.index');
 Route::get('/news/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/partners/{partner:slug}', [PartnerController::class, 'show'])->name('partners.show');
 
+Route::match(['get', 'post'], '/login', function () {
+    return redirect()->route('home');
+});
+
+Route::match(['get', 'post'], '/register', function () {
+    return redirect()->route('home');
+});
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -60,3 +69,5 @@ Route::middleware([
 //        return view('dashboard');
 //    })->name('dashboard');
 });
+
+
