@@ -39,14 +39,7 @@
             </a>
         </div>
 
-        <!-- Правая часть -->
-        <div class="hidden sm:flex items-center">
-            @auth
-                @include('layouts.partials.header-right-auth')
-            @else
-                @include('layouts.partials.header-right-guest')
-            @endauth
-        </div>
+
 
         <!-- Мобильный гамбургер -->
         <div class="sm:hidden flex items-center">
@@ -82,13 +75,6 @@
             <x-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('contacts')" class="block px-4 py-2">
                 {{ __('Контакты') }}
             </x-nav-link>
-        </div>
-        <div class="pt-4 pl-6 pb-3 border-t border-gray-200">
-            @auth
-                @include('layouts.partials.header-right-auth')
-            @else
-                @include('layouts.partials.header-right-guest')
-            @endauth
         </div>
     </div>
 </nav>
