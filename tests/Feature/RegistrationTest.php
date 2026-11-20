@@ -22,15 +22,13 @@ class RegistrationTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_registration_screen_cannot_be_rendered_if_support_is_disabled(): void
+    public function test_registration_redirects_to_home_if_disabled(): void
     {
         if (Features::enabled(Features::registration())) {
             $this->markTestSkipped('Registration support is enabled.');
         }
 
-        $response = $this->get('/register');
-
-        $response->assertStatus(404);
+        $this->get('/register')->assertRedirect(route('home'));
     }
 
     public function test_new_users_can_register(): void
